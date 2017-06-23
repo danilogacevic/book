@@ -1,0 +1,3 @@
+@component('layouts.index')
+
+@endcomponent
