@@ -168,6 +168,7 @@ return [
          * Package Service Providers...
          */
         Laravel\Tinker\TinkerServiceProvider::class,
+        Roland\Crud\CrudServiceProvider::class,
 
         /*
          * Application Service Providers...

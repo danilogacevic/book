@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "489d242cb2ac58aaa7db81a7b05a22d3",
-    "content-hash": "3dc94d54fd3c9199780f598baa46e0f8",
+    "hash": "8556e8992a929c78cbdbb1534a1292b8",
+    "content-hash": "10b18f4ec9874d0a283ecdd782050348",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -1321,6 +1321,39 @@
                 "uuid"
             ],
             "time": "2017-03-26 20:37:53"
+        },
+        {
+            "name": "roland/crud",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/roladn/laravelcrud.git",
+                "reference": "5e6d05556f679983457f7a44c0fac120920c914d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/roladn/laravelcrud/zipball/5e6d05556f679983457f7a44c0fac120920c914d",
+                "reference": "5e6d05556f679983457f7a44c0fac120920c914d",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Roland\\Crud\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Roland Alla",
+                    "email": "alla.roland@gmail.com"
+                }
+            ],
+            "description": "This is a CRUD generator for Laravel 5.4",
+            "time": "2017-05-09 10:32:15"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -3697,7 +3730,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "roland/crud": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {

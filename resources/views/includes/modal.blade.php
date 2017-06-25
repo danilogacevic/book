@@ -2,7 +2,7 @@
   .form-control {
     margin-bottom: 2%;
   }
-  #forgot {
+  #forgot, #register {
     display: none;
   }
   .modal-dialog {
@@ -14,6 +14,17 @@
   .modal-content {
 
     width: 60%;
+
+  }
+
+  .modal-content h5 {
+  
+    font-family: cursive;
+  }
+
+  .modal-content p, .modal-content label {
+  
+    font-family: cursive;
   }
 </style>
 
@@ -22,13 +33,10 @@
     <div class="modal-content">
       
 
-      @if(!Auth::check())
 
       <div class="modal-header">
-        <h5 class="modal-title text-center" style="font-weight:bold;">registrujte se za pristtup ekskluzivnom sadrzaju</h5>
-   <!--      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button> -->
+        <h5 class="modal-title text-center" style="font-weight:bold;">registrovani korisnici imaju pristup ekskluzivnom sadrzaju</h5>
+   
       </div>
       <div class="modal-body">
 
@@ -82,23 +90,37 @@
                             </div>
                         </div>
 
-               <button type="submit" class="btn btn-primary">Save changes</button>
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <p class="pull-right"><a href="javascript:void(0)" class="">Forgot password ?</a></p>
+                         <div class="form-group">
+                            <div class="col-md-12">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" name="newsletter" value=1>Prijavi se za newsletter
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        
+                          <div class="form-inline" style="margin: 0 5%;">
+                            <button type="submit" class="btn btn-sm btn-success">Registruj se</button>
+                            <button type="button" class="btn btn-sm btn-warning" data-dismiss="modal">Zatvori</button>
+                            <p class="pull-right"><a href="javascript:void(0)" class="">Zaboravili ste sifru ?</a></p>
+                          </div>
+                         
+
+                            </div>
+
+                         
 
   
          {!! Form::close() !!}
 
-      @else
-
+  
    
 
         {!! Form::open(['method'=>'POST','action'=>'Auth\LoginController@login','id'=>'login']) !!}
 
-           <div class="modal-header">
-        <h5 class="modal-title text-center" style="font-weight:bold;">Log in</h5>
- 
-      </div>
+      
       <div class="modal-body">
 
         
@@ -131,23 +153,27 @@
 
                 
 
-               <button type="submit" class="btn btn-primary">Save changes</button>
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <p class="pull-right"><a href="javascript:void(0)" class="">Forgot password ?</a></p>
+                  <div class="form-inline" style="margin: 0 5%;">
+
+                            <button type="submit" class="btn btn-sm btn-success">Uloguj se</button>
+                            <button type="button" class="btn btn-sm btn-info">Registruj se</button>
+                            <p class="pull-right"><a href="javascript:void(0)" class="">Forgot password ?</a></p>
+                  </div>
 
   
          {!! Form::close() !!}
 
-         @endif
 
+      </div>
 
+         <div class="modal-body">
         {!! Form::open(['method'=>'POST','id'=>'forgot']) !!}
           <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="inlineFormInputGroup" placeholder="Username">
         {!! Form::close() !!}
-
-
       </div>
     
     </div>
   </div>
 </div>
+
+

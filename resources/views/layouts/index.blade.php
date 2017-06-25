@@ -76,6 +76,27 @@
                             <li><a data-scroll href="#pricing">pricing</a></li>
                             <li><a data-scroll href="#faq">faq</a></li>
                             <li><a data-scroll href="#author">author</a></li>
+                            
+                            @if(!Auth::check())
+
+                                <li><a href="javascript:void(0)" id="registruvanje">prijava</a></li>
+
+                            @elseif(Auth::check())
+
+                                <li>
+                                        <a href="{{ route('logout') }}"
+                                            onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                            Odjava
+                                        </a>
+
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                            {{ csrf_field() }}
+                                        </form>
+                                    </li>
+
+                            @endif
+                            
 
                         </ul>
                     </div>
@@ -1334,6 +1355,31 @@
     <!-- 5. SCRIPTS ends -->
 
     @yield('scripts')
+
+    @if(count($errors) > 0 )
+
+
+   <script>
+     
+    $(document).ready(function() {
+
+
+
+        setTimeout(function() {
+
+          $('#myModal').modal('show');
+        }, 3000); // milliseconds
+
+
+        
+                });
+
+   </script>
+
+
+
+
+@endif
 
 </body>
 

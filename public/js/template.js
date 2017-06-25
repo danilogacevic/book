@@ -66,7 +66,7 @@ $(function () {
         offset: 200
     })
 
-    $('nav a').on('click', function (e) {
+    $('nav a').not(':last').on('click', function (e) {
         $('html, body').stop().animate({
             scrollTop: $($(this).attr('href')).offset().top - 50
         }, 1500, 'easeInOutExpo');

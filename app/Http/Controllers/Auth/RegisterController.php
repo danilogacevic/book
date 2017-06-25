@@ -72,11 +72,27 @@ namespace App\Http\Controllers\Auth;
         */
         protected function create(array $data)
         {
-            return User::create([
-                'name' => $data['name'],
-                'email' => $data['email'],
-                'password' => bcrypt($data['password']),
-            ]);
+
+            if(isset($data['newsletter'])){
+
+                 return User::create([
+                        'name' => $data['name'],
+                        'email' => $data['email'],
+                        'password' => bcrypt($data['password']),
+                        'newsletter' =>$data['newsletter']
+                                    ]);
+
+            } else {
+
+                return User::create([
+
+                        'name' => $data['name'],
+                        'email' => $data['email'],
+                        'password' => bcrypt($data['password'])
+                
+                                    ]);
+            }
+           
         }
 
         /**

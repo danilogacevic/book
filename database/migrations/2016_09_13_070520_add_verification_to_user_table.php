@@ -31,6 +31,7 @@ class AddVerificationToUserTable extends Migration
     {
         Schema::table($this->getUserTableName(), function (Blueprint $table) {
             $table->string('role')->default('subscriber');
+            $table->boolean('newsletter')->default(false);
             $table->boolean('verified')->default(false);
             $table->string('verification_token')->nullable();
         });
