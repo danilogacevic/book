@@ -20,7 +20,8 @@
 
 
     <!-- Template css -->
-
+	
+	
    <link rel="stylesheet" type="text/css" href="{{asset('css/template.css')}}">
 
     <!-- Font Icons -->
@@ -224,6 +225,8 @@
             </div>
         </section>
         <!-- book trailer ends -->
+
+        @include('includes.modal')
 
         <!-- what you will learn -->
         <section id="what-you-learn" class="what-you-learn page">
@@ -1329,6 +1332,8 @@
    <script src="{{asset('js/template.js')}}"></script>
 
     <!-- 5. SCRIPTS ends -->
+
+    @yield('scripts')
 
 </body>
 
