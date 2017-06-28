@@ -35,7 +35,7 @@ namespace App\Http\Controllers\Auth;
         *
         * @var string
         */
-        protected $redirectTo = '/home';
+        protected $redirectTo = '/';
 
        /**
         * Create a new controller instance.

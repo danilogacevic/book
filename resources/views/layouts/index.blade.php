@@ -587,7 +587,8 @@
                             <h3 class="text-center">All Taskers are screened for quality and reliablity.</h3>
                         </div>
                     </div>
-
+            
+            
 
                     <div class="portfolio-items grid">
                         <ul id="grid-items" class="clearfix">
@@ -653,8 +654,21 @@
                                     <div class="img-hover"></div>
                                 </a>
                             </li>
+                            <li class="col-sm-6 col-md-4 gallery-img text-center">
+                                <a href="http://placehold.it/800x600" data-effect="mfp-move-horizontal"><img alt='published-img' src="http://placehold.it/800x600" class="img-responsive">
+                                    <span class="img-caption text-center"> la vien rose</span>
+                                    <div class="img-hover"></div>
+                                </a>
+                            </li>
+                            <li class="col-sm-6 col-md-4 gallery-img text-center">
+                                <a href="http://placehold.it/800x600" data-effect="mfp-move-horizontal"><img alt='published-img' src="http://placehold.it/800x600" class="img-responsive">
+                                    <span class="img-caption text-center"> la vien rose</span>
+                                    <div class="img-hover"></div>
+                                </a>
+                            </li>
                          </ul>
                     </div>
+                    
                 </div><!-- End: .row -->
             </div><!-- End: .container-->
         </section>
@@ -878,9 +892,7 @@
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
                             tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
                             quis.</p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                            tempor incididunt ut labore et dolore.</p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod dolor.</p>
+                            
                         </div>
                     </div>
 
@@ -1380,6 +1392,21 @@
 
 
 @endif
+
+            @if(!Auth::check() or Auth::user()->verified !== 1)
+                
+
+                <script>
+
+                     $("#grid-items img").unwrap();
+                     $("span.img-caption").css({'left':'3.9%','width':'92.5%'});
+                     
+                     var element = "<div style='position:fixed;top:50%;'>Helllo</div>";
+                     $("body").append(element);
+                </script>
+
+               
+            @endif
 
 </body>
 

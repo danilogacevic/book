@@ -11,7 +11,7 @@ class NewsletterController extends Controller
 {
     //
 
-    public function send() {
+    public function send(Request $request) {
 
     	$emails = User::where('newsletter','=',1)->pluck('email')->all();
 

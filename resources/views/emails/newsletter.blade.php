@@ -27,4 +27,7 @@
             Copyright 2017 Danilo Gacevic
         @endcomponent
     @endslot
+
+    
+
 @endcomponent
