@@ -10,13 +10,37 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Monografija Crne Gore je jedna dobra knjiga, a dako i sto para donese !">
+    <meta name="keywords" content="Monografija Crna Gora,Crna Gora landscapes,Montenegro Touristic organization">
     <!--meta tags ends-->
 
-    <title>Published - Responsive & Interactive Landing Page for Books</title>
+    <title>Monografija Crne Gore, mjesto dobre zajebancije !</title>
+
 
     <!--- Links to google fonts -->
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,700,800%7cCardo:400italic%7cMerriweather:400,300,300italic,400italic' rel='stylesheet' type='text/css'>
     <!-- Links to fonts ends -->
+
+
+    <!-- Open Graph data -->
+
+        <meta property="og:title" content="Monografija Crne Gore">
+        <meta property="og:type" content="article">
+        <meta property="og:url" content="http://e-book.dev">
+        <meta property="og:image" content="http://e-book.dev/images/images.jpg">
+        <meta property="og:description" content="This is an interesting book about Montenegro landscapes">
+
+    <!-- Twitter Card data -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:site" content="@publisher_handle">
+        <meta name="twitter:title" content="Monografija Crne Gore">
+        <meta name="twitter:description" content="Monografija Crne Gore" content="Jedna very interesting book about Montenegro">
+        <meta name="twitter:creator" content="@author_handle">
+
+    <!-- Schema.org markup for Google+ -->
+        <meta itemprop="name" content="Monografija Crne Gore">
+        <meta itemprop="description" content="Monografija Crne Gore" content="Veoma dobra knjiga o nasoj Crnoj Gori">
+        <meta itemprop="image" content="http://e-book.dev/images/images.jpg">
 
 
     <!-- Template css -->
@@ -983,7 +1007,36 @@
                                                 <li>Lorem ipsum dolor sit amet set.</li>
                                             </ul>
 
-                                            <button class="btn btn-block custom-button">Buy Now</button>
+                                            <form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post">
+                                            <input type="hidden" name="cmd" value="_cart">
+                                            <input type="hidden" name="business" value="danilogacevic.pg-facilitator@gmail.com">
+                                            <input type="hidden" name="currency_code" value="US">
+                                                                                        
+                                          
+                                            
+                                        
+                                            
+                                            <input type="hidden" name="item_name_1" value="Monografija">
+                                            <input type="hidden" name="item_number_1" value="1">
+                                            <input type="hidden" name="amount_1" value="29">
+                                            <input type="hidden" name="quantity_1" value="1">
+                                                                        
+                                        
+                                       
+                                            
+                                                            
+                                <div class="col-sm-6 col-sm-offset-3">
+                                    {!! Form::select('custom', [''=>'Choose Language','1'=>'English'], null, ['class'=>'form-control language'])!!}
+                                </div>
+                                
+                            
+                                                                
+                                                {!! Form::button('Buy now',['class'=>'btn btn-block custom-button','type'=>'image','name'=>'upload'])!!}
+                                            
+                                            
+                                                {!! Form::close() !!}
+
+                                            <!-- <button class="btn btn-block custom-button">Buy Now</button> -->
                                         </div>
 
                                         <div class="col-md-5  hidden-xs hidden-sm pricing-book">
@@ -1031,6 +1084,9 @@
                                                 <li>No contract or commitments</li>
                                                 <li>Unlimited access to screencasts</li>
                                             </ul>
+
+                                            
+                                            
 
                                             <button class="btn btn-block custom-button">Buy Now</button>
                                         </div>
@@ -1380,7 +1436,7 @@
         setTimeout(function() {
 
           $('#myModal').modal('show');
-        }, 3000); // milliseconds
+        }, 1000); // milliseconds
 
 
         
@@ -1400,9 +1456,27 @@
 
                      $("#grid-items img").unwrap();
                      $("span.img-caption").css({'left':'3.9%','width':'92.5%'});
+                     $(".img-hover").css({'left': '4%','width': '92%'});
+
+                     var element = "<div class='bg-danger' style='position:fixed;top:50%;left:82%;font-weight:bold;' id='poruka'>Morate biti registrovan korisnik <br> da bi ste otvorili slike u punoj veličini</div>";
+
+                     $(".img-hover").click(function(){
+
+                        if($("#poruka").length){
+
+                            $("#poruka").css('display','block');
+                            $("#poruka").delay(2000).fadeOut();
+                        } else {
+
+                             $("body").append(element);
+                        $("#poruka").delay(2000).fadeOut();
+                        }
+
+                       
+                     });
                      
-                     var element = "<div style='position:fixed;top:50%;'>Helllo</div>";
-                     $("body").append(element);
+                     
+                    
                 </script>
 
                

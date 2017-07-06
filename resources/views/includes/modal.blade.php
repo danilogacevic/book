@@ -2,6 +2,10 @@
   .form-control {
     margin-bottom: 2%;
   }
+
+  .language {
+    margin-bottom: 5%;
+  }
   #forgot, #register {
     display: none;
   }
@@ -104,7 +108,7 @@
                           <div class="form-inline" style="margin: 0 5%;">
                             <button type="submit" class="btn btn-sm btn-success">Registruj se</button>
                             <button type="button" class="btn btn-sm btn-warning" data-dismiss="modal">Zatvori</button>
-                            <p class="pull-right"><a href="javascript:void(0)" class="">Zaboravili ste sifru ?</a></p>
+                            <p class="pull-right"><a href="{{route('password.request')}}" class="">Zaboravili ste sifru ?</a></p>
                           </div>
                          
 
@@ -157,7 +161,7 @@
 
                             <button type="submit" class="btn btn-sm btn-success">Uloguj se</button>
                             <button type="button" class="btn btn-sm btn-info">Registruj se</button>
-                            <p class="pull-right"><a href="javascript:void(0)" class="">Forgot password ?</a></p>
+                            <p class="pull-right"><a href="{{route('password.request')}}" class="">Forgot password ?</a></p>
                   </div>
 
   
@@ -166,11 +170,11 @@
 
       </div>
 
-         <div class="modal-body">
+     <!--     <div class="modal-body">
         {!! Form::open(['method'=>'POST','id'=>'forgot']) !!}
           <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="inlineFormInputGroup" placeholder="Username">
         {!! Form::close() !!}
-      </div>
+      </div> -->
     
     </div>
   </div>

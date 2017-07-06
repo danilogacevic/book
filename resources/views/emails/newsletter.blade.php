@@ -1,4 +1,4 @@
-@component('mail::layout')
+@component('mail::message')
     {{-- Header --}}
     @slot('header')
         @component('mail::header', ['url' => config('app.url')])
@@ -9,6 +9,8 @@
 
     {{-- Body --}}
     Posjetite nas sajt, objavili smo interesantne sadrzaje o Crnoj Gori !
+
+ 
 
 
 
