@@ -1020,13 +1020,14 @@
                                             <input type="hidden" name="item_number_1" value="1">
                                             <input type="hidden" name="amount_1" value="29">
                                             <input type="hidden" name="quantity_1" value="1">
+                                            <input type="hidden" name="return" value="">
                                                                         
                                         
                                        
                                             
                                                             
                                 <div class="col-sm-6 col-sm-offset-3">
-                                    {!! Form::select('custom', [''=>'Choose Language','1'=>'English'], null, ['class'=>'form-control language'])!!}
+                                    {!! Form::select('custom', [''=>'Choose Language','english'=>'English'], null, ['class'=>'form-control language'])!!}
                                 </div>
                                 
                             

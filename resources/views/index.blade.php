@@ -45,7 +45,16 @@
 			  });
 
 		     
+		     $(document).on('change', 'select', function() {
+				    var language = $(this).val(); // the selected options’s value
 
+				    // if you want to do stuff based on the OPTION element:
+				    var opt = $(this).find('option:selected')[0];
+				    // use switch or if/else etc.
+				    // console.log(opt);
+
+				    $( "input[name='return']" ).val(language);
+				});
 
 
 		    
