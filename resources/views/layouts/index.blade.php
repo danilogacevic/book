@@ -103,7 +103,7 @@
                             
                             @if(!Auth::check())
 
-                                <li><a href="javascript:void(0)" id="registruvanje">prijava</a></li>
+                                <li><a href="javascript:void(0)" id="registruvanje">login</a></li>
 
                             @elseif(Auth::check())
 
@@ -227,6 +227,14 @@
             </div><!-- End: .details -->
         </section>
         <!-- Hero section ends-->
+
+         @if(session('message'))
+
+            <div class='bg-danger' style='position:fixed;top:50%;left:82%;font-weight:bold;' id='paypalpor'>{{session('message')}}</div>
+
+    
+
+ @endif
 
         <!-- as seen on section starts-->
         <section id="as-seen-on" class="as-seen-on page">
@@ -575,12 +583,11 @@
 
                         <div class="free-chapter-form">
                             <div class="form-wrapper form-1">
-                                <form id="mailchimp-subscribe">
+                                
                                     <p class="subscription-failed"></p>
-                                    <input type="text" name="name" placeholder="Your Name" class="contact-input">
-                                    <input type="email" name="email" placeholder="Email Address" class="contact-input">
-                                    <button class="btn btn-block custom-button">Download Now</button>
-                                </form>
+                                    
+                                    <button class="btn btn-block custom-button" id="free-chapter">Download Now</button>
+                             
                             </div>
 
                             <div class="form-wrapper form-2" style="display:none">
@@ -1016,24 +1023,203 @@
                                             
                                         
                                             
-                                            <input type="hidden" name="item_name_1" value="Monografija">
+                                            <input type="hidden" name="item_name_1" value="Monography">
                                             <input type="hidden" name="item_number_1" value="1">
-                                            <input type="hidden" name="amount_1" value="29">
+                                            <input type="hidden" name="amount_1" value="2">
                                             <input type="hidden" name="quantity_1" value="1">
+                                            
+                                            <input type="hidden" name="rm" value="2">
+
                                             <input type="hidden" name="return" value="">
                                                                         
                                         
-                                       
-                                            
-                                                            
+                                        @if(Auth::user())       
+
                                 <div class="col-sm-6 col-sm-offset-3">
-                                    {!! Form::select('custom', [''=>'Choose Language','english'=>'English'], null, ['class'=>'form-control language'])!!}
+{!! Form::select('custom', [''=>'Choose Language','http://jzuobkotor.me/thankyou?lang=english&product=book'=>'English','http://jzuobkotor.me/thankyou?lang=french&product=book'=>'French','http://jzuobkotor.me/thankyou?lang=spanish&product=book'=>'Spanish','http://jzuobkotor.me/thankyou?lang=german&product=book'=>'German','http://jzuobkotor.me/thankyou?lang=italian&product=book'=>'Italian','http://jzuobkotor.me/thankyou?lang=russian&product=book'=>'Russian','http://jzuobkotor.me/thankyou?lang=polish&product=book'=>'Polish','http://jzuobkotor.me/thankyou?lang=czech&product=book'=>'Czech','http://jzuobkotor.me/thankyou?lang=turkish&product=book'=>'Turkish','http://jzuobkotor.me/thankyou?lang=arabic&product=book'=>'Arabic','http://jzuobkotor.me/thankyou?lang=chinese&product=book'=>'Chinese'], null, ['class'=>'form-control language','required'=>'required'])!!}
                                 </div>
                                 
                             
                                                                 
                                                 {!! Form::button('Buy now',['class'=>'btn btn-block custom-button','type'=>'image','name'=>'upload'])!!}
+
+                                        @else
+
+                                            <a class="btn btn-block custom-button" href="javascript:void(0)">Register and buy</a>
+
+                                        @endif
                                             
+                                                {!! Form::close() !!}
+
+                                            
+                                        </div>
+
+                                        <div class="col-md-5  hidden-xs hidden-sm pricing-book">
+                                            <img src="images/book/book-front-large.png" class="img-responsive" alt='published-img'>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="item  fadeInUp delay-2 animated">
+                                    <div class="row">
+
+                                        <div class="col-md-7">
+                                            <div class="price text-center">
+                                                <span class="pricing-dollar">$</span><span class="pricing-number">29</span>
+                                            </div>
+
+                                            <ul>
+                                                <li>Unlimited access to all courses</li>
+                                                <li>Free Membership of juke</li>
+                                                <li>No contract or commitments</li>
+                                                <li>Unlimited access to screencasts</li>
+                                            </ul>
+
+                                            <button class="btn btn-block custom-button">Buy Now</button>
+                                        </div>
+
+                                        <div class="col-md-5  hidden-xs hidden-sm pricing-book">
+                                            <img src="images/book/book-front-large.png" class="img-responsive" alt='published-img'>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="item  fadeInUp delay-2 animated">
+                                    <div class="row">
+                                        <div class="col-md-7">
+                                            <div class="price text-center">
+                                                <span class="pricing-dollar">$</span><span class="pricing-number">29</span>
+                                            </div>
+
+                                            <ul>
+                                                <li>Unlimited access to all courses</li>
+                                                <li>Free Membership of juke</li>
+                                                <li>No contract or commitments</li>
+                                                <li>Unlimited access to screencasts</li>
+                                            </ul>
+
+                                            
+                                            
+
+                                            <button class="btn btn-block custom-button">Buy Now</button>
+                                        </div>
+
+                                        <div class="col-md-5  hidden-xs hidden-sm pricing-book">
+                                            <img src="images/book/book-front-large.png" class="img-responsive" alt='published-img'>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="item  fadeInUp delay-2 animated">
+                                    <div class="row">
+
+                                        <div class="col-md-7">
+                                            <div class="price text-center">
+                                                <span class="pricing-dollar">$</span><span class="pricing-number">29</span>
+                                            </div>
+
+                                            <ul>
+                                                <li>Unlimited access to all courses</li>
+                                                <li>Free Membership of juke</li>
+                                                <li>No contract or commitments</li>
+                                                <li>Unlimited access to screencasts</li>
+                                            </ul>
+
+                                            <button class="btn btn-block custom-button">Buy Now</button>
+                                        </div>
+
+                                        <div class="col-md-5  hidden-xs hidden-sm pricing-book">
+                                            <img src="images/book/book-front-large.png" class="img-responsive" alt='published-img'>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div><!-- End: .row -->
+            </div><!-- End: .container-->
+        </section>
+        <!-- pricing section ends -->
+
+         <!-- pricing section starts -->
+        <section id="pricing" class="pricing page">
+            <div class="container">
+                <div class="row">
+                    <div class="main-heading clearfix">
+                        <div class="col-md-12 text-center">
+                            <h1 class="text-center">Package <span>&</span> Pricing</h1>
+                            <h3 class="text-center">All Taskers are screened for quality and reliablity.</h3>
+                        </div>
+                    </div>
+                    <div id="pricing-slider" class="carousel slide carousel-fade" data-ride="carousel" data-interval="false">
+                        <!-- Indicators -->
+                        <div class="col-md-12 pricing-nav">
+                            <ol class="carousel-indicators">
+                                <li data-target="#pricing-slider" data-slide-to="0" class="active wow fadeInLeft" data-wow-delay="0.3s">Paperback</li>
+                                <li data-target="#pricing-slider" data-slide-to="1" class="wow fadeInLeft" data-wow-delay="0.6s">Hardcover</li>
+                                <li data-target="#pricing-slider" data-slide-to="2" class="wow fadeInLeft" data-wow-delay="0.9s">Ebook</li>
+                                <li data-target="#pricing-slider" data-slide-to="3" class="wow fadeInLeft" data-wow-delay="1.2s">Audible</li>
+                            </ol>
+                        </div>
+
+                        <!-- Wrapper for slides -->
+                        <div class="col-md-10 col-md-offset-1 wow fadeInUp">
+                            <div class="carousel-inner" role="listbox">
+                                <div class="item  fadeInUp delay-2 animated active">
+                                    <div class="row">
+
+                                        <div class="col-md-7">
+                                            <div class="price text-center">
+                                                <span class="pricing-dollar">$</span><span class="pricing-number">29</span>
+                                            </div>
+
+                                            <ul>
+                                                <li>Lorem ipsum dolor sit amet set.</li>
+                                                <li>Excepteur sint occaecat cupidatat non.</li>
+                                                <li>Sunt in culpa qui officia deserunt mollit</li>
+                                                <li>Lorem ipsum dolor sit amet set.</li>
+                                            </ul>
+
+                                            <form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post">
+                                            <input type="hidden" name="cmd" value="_cart">
+                                            <input type="hidden" name="business" value="danilogacevic.pg-facilitator@gmail.com">
+                                            <input type="hidden" name="currency_code" value="US">
+                                                                                        
+                                          
+                                            
+                                        
+                                            
+                                            <input type="hidden" name="item_name_1" value="Travel guide">
+                                            <input type="hidden" name="item_number_1" value="1">
+                                            <input type="hidden" name="amount_1" value="2">
+                                            <input type="hidden" name="quantity_1" value="1">
+                                            
+                                            <input type="hidden" name="rm" value="2">
+
+                                            <input type="hidden" name="return" value="">
+                                                                        
+                                        
+                                                            
+                                @if(Auth::user())       
+
+                                <div class="col-sm-6 col-sm-offset-3">
+{!! Form::select('custom', [''=>'Choose Language','http://jzuobkotor.me/thankyou?lang=english&product=guide'=>'English','http://jzuobkotor.me/thankyou?lang=french&product=guide'=>'French','http://jzuobkotor.me/thankyou?lang=spanish&product=guide'=>'Spanish','http://jzuobkotor.me/thankyou?lang=german&product=guide'=>'German','http://jzuobkotor.me/thankyou?lang=italian&product=guide'=>'Italian','http://jzuobkotor.me/thankyou?lang=russian&product=guide'=>'Russian','http://jzuobkotor.me/thankyou?lang=polish&product=guide'=>'Polish','http://jzuobkotor.me/thankyou?lang=czech&product=guide'=>'Czech','http://jzuobkotor.me/thankyou?lang=turkish&product=guide'=>'Turkish','http://jzuobkotor.me/thankyou?lang=arabic&product=guide'=>'Arabic','http://jzuobkotor.me/thankyou?lang=chinese&product=guide'=>'Chinese'], null, ['class'=>'form-control language','required'=>'required'])!!}
+                                </div>
+                                
+                            
+                                                                
+                                                {!! Form::button('Buy now',['class'=>'btn btn-block custom-button','type'=>'image','name'=>'upload'])!!}
+
+                                        @else
+
+                                            <a class="btn btn-block custom-button" href="javascript:void(0)">Register and buy</a>
+
+                                        @endif
                                             
                                                 {!! Form::close() !!}
 
@@ -1459,9 +1645,9 @@
                      $("span.img-caption").css({'left':'3.9%','width':'92.5%'});
                      $(".img-hover").css({'left': '4%','width': '92%'});
 
-                     var element = "<div class='bg-danger' style='position:fixed;top:50%;left:82%;font-weight:bold;' id='poruka'>Morate biti registrovan korisnik <br> da bi ste otvorili slike u punoj veličini</div>";
+                     var element = "<div class='bg-danger' style='position:fixed;top:50%;left:82%;font-weight:bold;' id='poruka'>You have to be registered<br> to take this action</div>";
 
-                     $(".img-hover").click(function(){
+                     $(".img-hover, #free-chapter").click(function(){
 
                         if($("#poruka").length){
 
@@ -1480,8 +1666,13 @@
                     
                 </script>
 
+                @endif
+
+           
+       
+
                
-            @endif
+           
 
 </body>
 

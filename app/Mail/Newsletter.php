@@ -16,9 +16,14 @@ class Newsletter extends Mailable
      *
      * @return void
      */
-    public function __construct()
+
+    public $data;
+
+    public function __construct($data)
     {
         //
+
+        $this->data = $data;
     }
 
     /**
@@ -28,6 +33,12 @@ class Newsletter extends Mailable
      */
     public function build()
     {
-        return $this->markdown('emails.newsletter');
+        return $this->markdown('emails.newsletter')->with([
+            
+            'title' => $this->data['title'],
+            
+            'body'=>$this->data['body']
+            
+            ]);
     }
 }

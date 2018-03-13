@@ -50,7 +50,7 @@
                            
 
                             <div class="col-md-12">
-                                <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" placeholder="Ime i prezime" required autofocus>
+                                <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" placeholder="Name" required autofocus>
 
                                 @if ($errors->has('name'))
                                     <span class="help-block">
@@ -63,7 +63,7 @@
               <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
 
                             <div class="col-md-12">
-                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" placeholder="Mejl adresa" required>
+                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" placeholder="Email" required>
 
                                 @if ($errors->has('email'))
                                     <span class="help-block">
@@ -72,6 +72,16 @@
                                 @endif
                             </div>
                         </div>
+
+                         <div class="col-md-12">
+                                <input id="address" type="text" class="form-control" name="address" value="" placeholder="Address of delivery" required>
+
+                               <!--  @if ($errors->has('email'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('email') }}</strong>
+                                    </span>
+                                @endif -->
+                            </div>
 
                        <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
 
@@ -90,7 +100,7 @@
                            
 
                             <div class="col-md-12">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" placeholder="Ponovite password" required>
+                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" placeholder="Confirm password" required>
                             </div>
                         </div>
 
@@ -98,7 +108,7 @@
                             <div class="col-md-12">
                                 <div class="checkbox">
                                     <label>
-                                        <input type="checkbox" name="newsletter" value=1>Prijavi se za newsletter
+                                        <input type="checkbox" name="newsletter" value=1>You want to receive newsletter ?
                                     </label>
                                 </div>
                             </div>
@@ -106,9 +116,9 @@
 
                         
                           <div class="form-inline" style="margin: 0 5%;">
-                            <button type="submit" class="btn btn-sm btn-success">Registruj se</button>
-                            <button type="button" class="btn btn-sm btn-warning" data-dismiss="modal">Zatvori</button>
-                            <p class="pull-right"><a href="{{route('password.request')}}" class="">Zaboravili ste sifru ?</a></p>
+                            <button type="submit" class="btn btn-sm btn-success">Register</button>
+                            <button type="button" class="btn btn-sm btn-warning" data-dismiss="modal">Close</button>
+                            <p class="pull-right"><a href="{{route('password.request')}}" class="">Forgot password ? </a></p>
                           </div>
                          
 
@@ -132,7 +142,7 @@
               <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
 
                             <div class="col-md-12">
-                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" placeholder="Mejl adresa" required>
+                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" placeholder="Email" required>
 
                                 @if ($errors->has('email'))
                                     <span class="help-block">
@@ -159,8 +169,8 @@
 
                   <div class="form-inline" style="margin: 0 5%;">
 
-                            <button type="submit" class="btn btn-sm btn-success">Uloguj se</button>
-                            <button type="button" class="btn btn-sm btn-info">Registruj se</button>
+                            <button type="submit" class="btn btn-sm btn-success">Login</button>
+                            <button type="button" class="btn btn-sm btn-info">Register</button>
                             <p class="pull-right"><a href="{{route('password.request')}}" class="">Forgot password ?</a></p>
                   </div>
 

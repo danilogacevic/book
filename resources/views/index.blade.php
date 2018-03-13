@@ -17,7 +17,7 @@
 
 
 
-	
+	// Modal popup za registraciju
 
 		     $("#registruvanje").click(function(){
 
@@ -35,6 +35,9 @@
 
 			  // });
 
+
+	// Manipulacije sa modalom
+
 		     $("form .btn-info").click(function(){
 
 
@@ -44,17 +47,37 @@
 
 			  });
 
+
+	// Odabir jezika
+
 		     
 		     $(document).on('change', 'select', function() {
 				    var language = $(this).val(); // the selected options’s value
 
 				    // if you want to do stuff based on the OPTION element:
-				    var opt = $(this).find('option:selected')[0];
+				    // var opt = $(this).find('option:selected')[0];
 				    // use switch or if/else etc.
 				    // console.log(opt);
 
-				    $( "input[name='return']" ).val(language);
+				    // $("input[name='return']").val(language);
+
+				    // $(this).siblings("input[name='return']").val(language);
+
+				    $(this).parent().siblings("input[name='return']").val(language);
 				});
+
+	// Poruka nakon kupivine
+
+              $("#paypalpor").delay(2000).fadeOut();
+
+              var $window = $(window);
+
+              if($window.width()<520){
+	
+              		$(".modal-content").css('width','100%');
+              		$(".modal-dialog").css('margin-left','3%');
+	
+						}
 
 
 		    

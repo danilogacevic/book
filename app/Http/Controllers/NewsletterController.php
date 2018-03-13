@@ -18,7 +18,7 @@ class NewsletterController extends Controller
 		    	foreach ($emails as $email) {
 		    		# code...
 
-		    		Mail::to($email)->send(new Newsletter());
+		    		Mail::to($email)->send(new Newsletter($request->all()));
 
 			       
 

@@ -8,7 +8,7 @@
     @endslot
 
     {{-- Body --}}
-    Posjetite nas sajt, objavili smo interesantne sadrzaje o Crnoj Gori !
+    {{$body}}
 
  
 

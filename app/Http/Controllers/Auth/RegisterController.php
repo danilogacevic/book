@@ -60,6 +60,7 @@ namespace App\Http\Controllers\Auth;
             return Validator::make($data, [
                 'name' => 'required|max:255',
                 'email' => 'required|email|max:255|unique:users',
+                'address' => 'required|max:255',
                 'password' => 'required|min:6|confirmed',
             ]);
         }
@@ -79,7 +80,8 @@ namespace App\Http\Controllers\Auth;
                         'name' => $data['name'],
                         'email' => $data['email'],
                         'password' => bcrypt($data['password']),
-                        'newsletter' =>$data['newsletter']
+                        'newsletter' =>$data['newsletter'],
+                        'address' =>$data['address']
                                     ]);
 
             } else {
@@ -88,6 +90,7 @@ namespace App\Http\Controllers\Auth;
 
                         'name' => $data['name'],
                         'email' => $data['email'],
+                        'address' =>$data['address'],
                         'password' => bcrypt($data['password'])
                 
                                     ]);

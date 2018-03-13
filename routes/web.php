@@ -40,6 +40,14 @@ Route::group(['middleware'=>'admin'],function(){
 	Route::resource('/admin/users','AdminUsersController');
 	Route::resource('/admin/posts','AdminPostsController');
 	Route::resource('/admin/photos','AdminMediasController');
+	Route::resource('/admin/orders','OrdersController');
 	
 	});
+
+// Route::get('/thankyou',function (){
+
+// 	return view('home');
+// });
+
+Route::get('/makeOrder','OrdersController@makeOrder');
 

@@ -41,7 +41,7 @@
                                         {{ $subcopy or '' }}
                                     </td>
                                 </tr>
-                                <tr class=""><img src="https://s3.eu-central-1.amazonaws.com/obracun/slika/javascript.png"  alt="Xero logo" style="border: 0px;"></tr>
+                                
                             </table>
                         </td>
            
@@ -52,5 +52,6 @@
             </td>
         </tr>
     </table>
+    <img src="https://s3.eu-central-1.amazonaws.com/obracun/slika/javascript.png"  alt="Xero logo" style="border: 0px;">
 </body>
 </html>

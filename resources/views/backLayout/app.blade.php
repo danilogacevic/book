@@ -131,9 +131,9 @@
                         </div>
                         <!-- /input-group -->
                     </li>
-                    <li>
+                   <!--  <li>
                         <a href="/admin"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
-                    </li>
+                    </li> -->
 
                     <li>
                         <a href="#"><i class="fa fa-user fa-fw"></i>Users<span class="fa arrow"></span></a>
@@ -163,6 +163,20 @@
                         <!-- /.nav-second-level -->
                     </li>
 
+                    <li>
+                        <a href="#"><i class="fa fa-paypal" aria-hidden="true"></i> Orders<span class="fa arrow"></span></a>
+
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a href="{{route('orders.index')}}">All Orders</a>
+                            </li>
+
+                          
+
+                        </ul>
+                        <!-- /.nav-second-level -->
+                    </li>
+
 
                     <li>
                         <a href="#"><i class="fa fa-picture-o fa-fw"></i>Photos<span class="fa arrow"></span></a>
@@ -175,6 +189,10 @@
                         <!-- /.nav-second-level -->
                     </li>
 
+                    <li>
+                        <a href="{{url('/admin/newsletter')}}"><i class="fa fa-picture-o fa-fw"></i>Newsletter<span class="fa arrow"></span></a>
+
+                      </li>
 
                 </ul>
 
